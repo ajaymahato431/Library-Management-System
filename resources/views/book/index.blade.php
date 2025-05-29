@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
     <div id="admin-content">
         <div class="container">
             <div class="row">
@@ -17,6 +16,7 @@
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>
+                            <th>Book ID</th>
                             <th>Book Name</th>
                             <th>Category</th>
                             <th>Author</th>
@@ -26,9 +26,10 @@
                             <th>Delete</th>
                         </thead>
                         <tbody>
-                            @forelse ($books as $book)
+                            @forelse ($books as $index=>$book)
                                 <tr>
-                                    <td class="id">{{ $book->id }}</td>
+                                    <td class="id">{{ $index + 1 }}</td>
+                                    <td class="id">{{ $book->book_id }}</td>
                                     <td>{{ $book->name }}</td>
                                     <td>{{ $book->category->name }}</td>
                                     <td>{{ $book->auther->name }}</td>

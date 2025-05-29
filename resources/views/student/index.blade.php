@@ -16,6 +16,7 @@
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>
+                            <th>Student ID</th>
                             <th>Student Name</th>
                             <th>Gender</th>
                             <th>Phone</th>
@@ -25,9 +26,10 @@
                             <th>Delete</th>
                         </thead>
                         <tbody>
-                            @forelse ($students as $student)
+                            @forelse ($students as $index=>$student)
                                 <tr>
-                                    <td class="id">{{ $student->id }}</td>
+                                    <td class="id">{{ $index + 1 }}</td>
+                                    <td class="id">{{ $student->student_id }}</td>
                                     <td>{{ $student->name }}</td>
                                     <td class="text-capitalize">{{ $student->gender }}</td>
                                     <td>{{ $student->phone }}</td>

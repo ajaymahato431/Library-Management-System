@@ -24,6 +24,7 @@ class UpdatebookRequest extends FormRequest
     public function rules()
     {
         return [
+            'book_id' => 'required|unique:books,book_id,' . $this->route('book'),
             'name' => 'required',
             'category_id' => 'required',
             'author_id' => 'required',

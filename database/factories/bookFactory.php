@@ -14,10 +14,11 @@ class bookFactory extends Factory
     public function definition()
     {
         return [
+            'book_id' => $this->faker->unique()->numerify('B-#####'),
             'name' => $this->faker->sentence(4),
-            'category_id' => random_int(1,10),
-            'auther_id' => random_int(1,10),
-            'publisher_id' => random_int(1,10),
+            'category_id' => random_int(1, 10),
+            'auther_id' => random_int(1, 10),
+            'publisher_id' => random_int(1, 10),
             'status' => 'Y'
         ];
     }
